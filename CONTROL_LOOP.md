@@ -23,8 +23,33 @@ CURRENT_STATE
 - Direct job handler contains move logic for _DONE / _FAILED / _DONE\_PENDING_ROUTE.
 - Current runtime status is PARTIAL: queue/scheduler/addressing path verified; normal-loop text route not yet PASS-closed.
 
-NEXT_STEP
-- Close the text-route failure in normal loop execution and normalize outputs/state for remote-visible operation through Google Drive Vault paths.
+EVENT LOG
+2026-03-16
+EVENT
+GitHub architecture split confirmed as three repos.
+CAUSE
+Project continuity, site delivery, and agent code needed separate canonical layers.
+ACTION
+Confirmed and fixed repo map:
+- automation-kb = SITE
+- e-factory-memory = MEMORY
+- e-factory-agent = AGENT
+RESULT
+Repo roles became explicit; project memory, site code, and agent code are no longer treated as one mixed repo.
 
-KEY_RISK
-- Partial closure may create false confidence: intake path is live, but production readiness is blocked until text-route failure and reboot/startup behaviour are verified.
+2026-03-16
+EVENT
+Agent line split clarified.
+CAUSE
+Mini-agent Git batch runner and LM-agent loop had started to drift conceptually into one “agent”.
+ACTION
+Confirmed:
+- mini-agent = RUN_BATCH.ps1 / GH_BATCH line
+- LM-agent = separate watcher/loop line
+- runtime folders are not repo-memory
+RESULT
+Boundary between code repo and runtime folders became explicit; future memory updates can describe both lines without mixing them.
+
+NEXT_STEP
+- Close the text-route failure in normal LM-agent loop execution and normalize outputs/state for remote-visible operation through Google Drive Vault paths.
+- Keep repo-memory and runtime layers separated while updating AGENTOPS documentation.

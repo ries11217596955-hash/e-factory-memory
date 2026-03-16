@@ -25,3 +25,14 @@ NEW CONFIRMED DECISIONS (2026-03-12)
 - For WEBOPS/site work, the default delivery mode is a ready patch-archive (ZIP) with correct repo-relative paths plus short APPLY / DELETE / VERIFY instructions.
 - File-by-file manual replacement is not the default WEBOPS/site mode unless explicitly requested as an exception.
 - Reaffirmation of an existing line practice must not be recorded as a new kernel rule when the behavior is already covered by active memory or line workflow.
+
+NEW CONFIRMED DECISIONS (2026-03-16)
+- GitHub architecture is split into three repos:
+  automation-kb = SITE repo
+  e-factory-memory = MEMORY repo
+  e-factory-agent = AGENT repo
+- e-factory-memory is the canonical repo-memory / continuity layer for project memory files.
+- e-factory-agent is the separate AGENT line repo and must not be treated as runtime state itself.
+- Confirmed mini-agent line = RUN_BATCH.ps1 / GH_BATCH; it is a single-file GitHub batch runner.
+- LM-agent / watcher / loop is a separate agent line and must not be mixed with mini-agent.
+- Runtime folders such as GH_BATCH, LN_GDRIVE_AGENT_AUTO, inbox/done/logs/.state, token store, and shortcuts are operational layers and are not part of memory-core.
