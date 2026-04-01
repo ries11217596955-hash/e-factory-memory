@@ -28,7 +28,7 @@
 - bootstrap: `00__*`
 - core: `MEMORY__*`, `KERNEL_INDEX.md`, `PROJECT_RULES.md`, `CONTRACTS.md`, `DECISIONS.md`, `CONTROL_LOOP.md`, `incidents.md`
 - line files: `WEBOPS__*`, `AGENTOPS__*`, `LMOPS__*`
-- proposals: `proposals/`
+- dedicated agent memory fragments may exist as standalone `*_STATE_*`, `*_MEMORY_UPDATE*`, `*_RULEPACK*`, `*_BRIDGE_CARD*` files when a line needs targeted fixation
 
 ## Правило обновления
 Приоритет обновлений:
@@ -41,5 +41,5 @@
 ## Импорт в GitHub
 1. Создать пустой репозиторий `e-factory-memory`
 2. Загрузить содержимое этого пакета в корень репозитория
-3. Проверить, что `KERNEL_BIOMEMORY_RULES_PROPOSED.md` лежит только в `proposals/`
+3. Сверить README с фактической структурой пакета; не оставлять ссылок на несуществующие папки
 4. Не переносить сюда runtime-логи и код из SITE/AGENT repo

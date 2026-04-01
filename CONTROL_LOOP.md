@@ -13,15 +13,12 @@ CURRENT BASELINE
 - Bootstrap layer added for fast entry into new chats.
 
 CURRENT_STATE
-- Local AI environment deployed: Open WebUI + LM Studio + qwen/qwen3-8b.
-- Memory Center connected; project memory retrieval works partially.
-- Profile baseline is usable, but reasoning tag output (<think>) is not fully eliminated.
-- New LM agent runtime root is C:\Users\Azerbaijan\Desktop\LN_GDRIVE_AGENT_AUTO.
-- Scheduled task LN_GDRIVE_AGENT_AUTO points to agent_loop_vault.ps1.
-- Google Drive Vault _INBOX is the intake surface; addressing contract is AGENT__*.
-- Popup/start signal is verified on manual loop start.
-- Direct job handler contains move logic for _DONE / _FAILED / _DONE\_PENDING_ROUTE.
-- Current runtime status is PARTIAL: queue/scheduler/addressing path verified; normal-loop text route not yet PASS-closed.
+- Repo-memory is aligned around continuity, not runtime storage.
+- Two uploaded agent packs are the current active operational focus:
+  - GH_BATCH
+  - SITE_AUDITOR_AGENT
+- LMOPS remains part of the architecture, but is not the primary focus of this memory patch.
+- Agent lines must be tracked separately to avoid mixed-state drift.
 
 EVENT LOG
 2026-03-16
@@ -50,6 +47,20 @@ Confirmed:
 RESULT
 Boundary between code repo and runtime folders became explicit; future memory updates can describe both lines without mixing them.
 
+2026-04-01
+EVENT
+Repo-memory active agent map was realigned to current operational use.
+CAUSE
+Current work is centered on two active uploaded agent packs, while repo-memory was still centered on LMOPS stabilization and the older LM-agent contour.
+ACTION
+Updated active-state files to reflect:
+- active agents = GH_BATCH + SITE_AUDITOR_AGENT
+- LM-agent / Vault-loop = separate non-active-focus contour
+- README consistency fix for repo structure contract
+RESULT
+Repo-memory active picture now matches the current operational contour without changing the core architecture.
+
 NEXT_STEP
-- Close the text-route failure in normal LM-agent loop execution and normalize outputs/state for remote-visible operation through Google Drive Vault paths.
-- Keep repo-memory and runtime layers separated while updating AGENTOPS documentation.
+- Keep per-agent status current inside AGENTOPS state files.
+- Update decisions only for confirmed operational facts, not for temporary runtime observations.
+- Preserve the separation between active agents, frozen contours, and runtime evidence.

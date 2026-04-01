@@ -36,3 +36,11 @@ NEW CONFIRMED DECISIONS (2026-03-16)
 - Confirmed mini-agent line = RUN_BATCH.ps1 / GH_BATCH; it is a single-file GitHub batch runner.
 - LM-agent / watcher / loop is a separate agent line and must not be mixed with mini-agent.
 - Runtime folders such as GH_BATCH, LN_GDRIVE_AGENT_AUTO, inbox/done/logs/.state, token store, and shortcuts are operational layers and are not part of memory-core.
+
+NEW CONFIRMED DECISIONS (2026-04-01)
+- Current active agent map for repo-memory is:
+  - GH_BATCH = active mini-agent line
+  - SITE_AUDITOR_AGENT = active audit-agent line
+- LM-agent / Vault-loop remains a separate contour and is not the current active-focus line in repo-memory.
+- AGENTOPS continuity must be maintained by agent line, not by one mixed status block for all runtimes.
+- Repo-memory may record verified runtime pack structure and contracts, but must not present unverified runtime closure as established fact.
